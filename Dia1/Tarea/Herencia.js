@@ -1,17 +1,30 @@
+console.log("herencia")
 class animal {
     constructor(nombreData,razaData,colorData,pesoData){
         this.nombre=nombreData;
-        this.razaData=razaData;
-        this.colorData=colorData;
-        this.pesoData=pesoData;
+        this.raza=razaData;
+        this.color=colorData;
+        this.peso=pesoData;
         
 
     }
-    herencia (){
-        console.log(`El ${this.nombre} es un animal` );
+    describir (){
+        console.log(`El ${this.nombre} es un animal de raza ${this.raza} con color ${this.color} con peso ${this.peso}` );
     }
 }
-A1= new animal("perro","pincher","popo","8kg")
-A1.herencia() 
-A2= new animal ("gato","criollo","negro","5kg");
-A2.herencia() 
+class perro extends animal {
+    ladrar(){
+        console.log(`el ${this.nombre} ladra`)
+    }
+}
+class gato extends animal {
+    aulla(){
+        console.log (`el ${this.nombre} aulla`)
+    }
+}
+A1= new perro("perro","pincher","popo","8kg")
+A2= new gato ("gato","criollo","negro","5kg");
+A1.describir();
+A1.ladrar();
+A2.describir();
+A2.aulla();
